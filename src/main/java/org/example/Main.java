@@ -19,7 +19,11 @@ public class Main {
         arrNum[5] = 23;
         arrNum[6] = 25;
 
-        System.out.print(binarySearch(arrNum,21,0,7));
+        System.out.println(binarySearch(arrNum,21,0,7));
+
+
+        int sumOutput = sum(10 , 30);
+        System.out.print("The sum of multiple of seven is: " + sumOutput);
 
         }
     static void printHelloWorld(int n) {
@@ -43,6 +47,20 @@ public class Main {
             return binarySearch(arr, findNum, mid + 1, high);  // search in the right half
         }
     }
+    static int sum(int n1, int n2) {
+        if (n1 > n2) {
+            return 0;  // base case if no numbers to add
+        }
+        else {
+            if (n1 % 7 == 0) {
+                return n1 + sum(n1 + 7, n2);  // include current multiple of 7
+            }
+            else {
+                return sum(n1 + 1, n2);  // skip current number
+            }
+        }
+    }
+
 
 
 
