@@ -4,9 +4,16 @@ package org.example;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        int n = 4;
 
-        
+        printHelloWorld(n);
 
-
+        }
+    static void printHelloWorld(int n) {
+        if (n > 0) {
+            System.out.println("Hello World");
+            printHelloWorld(n - 1);
+        }
     }
+
 }
